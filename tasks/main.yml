@@ -9,6 +9,10 @@
     - haproxy-config
     - haproxy-sysctl
 
+- name: config | Setting Facts
+  set_fact:
+    haproxy_bindnet_addr: "{{ hostvars[inventory_hostname]['ansible_' + haproxy_bindnet_interface]['ipv4']['address'] }}"
+
 - include: install.yml
   tags: [ haproxy, haproxy-install ]
 
