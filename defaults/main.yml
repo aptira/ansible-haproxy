@@ -42,11 +42,10 @@ haproxy_global_tunes:
 # Default
 haproxy_default_logs:
   - global
-haproxy_default_mode:
+haproxy_default_mode: http
 haproxy_default_maxconn: 4000
 haproxy_default_options:
   - dontlognull
-  - forwardfor
   - http-server-close
 haproxy_default_retries: 3
 haproxy_default_timeouts:
