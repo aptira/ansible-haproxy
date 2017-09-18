@@ -1,0 +1,23 @@
+---
+
+- name: create haproxy in pacemaker
+  pcs_resource: command=create resource_id=haproxy type=systemd:haproxy clone=true
+  args:
+    operations:
+      - action: monitor
+        options:
+          interval: 60
+          timeout: 10
+      - action: start
+        options:
+          interval: 0s
+          timeout: 200s
+      - action: stop
+        options:
+          interval: 0s
+          timeout: 200s
+    metas:
+      migration-threshold: 10
+      failure-timeout: "30s"
+      resource-stickiness: 100
+  run_once: true

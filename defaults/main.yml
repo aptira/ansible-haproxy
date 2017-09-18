@@ -8,6 +8,7 @@ haproxy_ip_forward: true
 haproxy_firewalld: true
 haproxy_selinux: true
 haproxy_apt_backports: false
+haproxy_pacemaker_support: false
 
 # Firewall
 haproxy_fw_ports:

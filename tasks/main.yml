@@ -30,3 +30,8 @@
 
 - include: sysctl.yml
   tags: [ haproxy, haproxy-sysctl ]
+
+- include: pacemaker.yml
+  when: haproxy_pacemaker_support is defined and
+        haproxy_pacemaker_support == true
+  tags: [ haproxy, haproxy-pacemaker ]
