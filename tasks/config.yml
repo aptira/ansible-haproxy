@@ -1,5 +1,10 @@
 ---
 # file: roles/haproxy/tasks/config.yml
+- name: write cert file
+  copy: 
+    content: "{{ haproxy_ssl_certificate_content }}"
+    dest: "{{ haproxy_ssl_certificate }}"
+  when: haproxy_ssl_certificate is defined and haproxy_ssl_certificate_content is defined
 - name: Configuring HAproxy
   template:
     src=etc/haproxy/haproxy.cfg.j2
