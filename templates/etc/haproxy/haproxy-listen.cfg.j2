@@ -94,6 +94,9 @@ listen {{ name }}
     stick           {{ stick }}
                 {% endfor %}
             {% endif %}
+            {% if value.rsprep is defined %}
+    rsprep         {{ value.rsprep }}
+            {% endif %}
             {% for srv in value.servers %}
     server          {{ srv }}
             {% endfor %}
