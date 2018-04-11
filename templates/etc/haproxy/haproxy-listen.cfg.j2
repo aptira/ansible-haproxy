@@ -95,7 +95,7 @@ listen {{ name }}
                 {% endfor %}
             {% endif %}
             {% if value.rsprep is defined %}
-    rsprep         {{ value.rsprep }}
+    rsprep          {{ value.rsprep }}
             {% endif %}
             {% for srv in value.servers %}
     server          {{ srv }}
